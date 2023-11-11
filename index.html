@@ -1,33 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback</title>
-  <link href="/styles/output.css" rel="stylesheet">
-  <script defer src="script.js"></script>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <link href="/styles/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <style>
+        .rating:hover,
+        .rating.active {
+            background: rgb(140, 140, 140);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: white;
+            transition: all 300ms ease;
+        }
+    </style>
 </head>
+
 <body class="w-screen h-screen flex justify-center items-center">
-  <div class="card w-96 glass">
-  <div class="card-body text-center">
-    <h2 class="card-title mx-auto text-3xl">Feedback</h2>
-    <div id="ratings-container" class="ratings-container my-4 w-full flex justify-between items-center gap-4" >
-        <div class="rating w-3/12  flex flex-col items-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/166/166527.png">
-          <small>Unhappy</small>
+    <div class="card w-96 glass">
+        <div class="card-body text-center">
+            <h2 class="card-title mx-auto text-3xl">Feedback</h2>
+            <div id="ratings-container" class="ratings-container my-4 w-full flex justify-between items-center gap-4">
+                <div id="unhappy"
+                    class="rating w-4/12 gap-3 flex flex-col items-center justify-center rounded-xl p-3 cursor-pointer">
+                    <img class="w-10" src="https://cdn-icons-png.flaticon.com/512/166/166527.png" />
+                    <small class="font-semibold">Unhappy</small>
+                </div>
+                <div id="neutral"
+                    class="rating w-4/12 gap-3 flex flex-col items-center justify-center rounded-xl p-3 cursor-pointer">
+                    <img class="w-10" src="https://cdn-icons-png.flaticon.com/512/1791/1791385.png" />
+                    <small class="font-semibold">Neutral</small>
+                </div>
+                <div id="satisfied"
+                    class="rating w-4/12 gap-3 flex flex-col items-center justify-center rounded-xl p-3 cursor-pointer">
+                    <img class="w-10" src="https://cdn-icons-png.flaticon.com/512/166/166538.png" />
+                    <small class="font-semibold">Satisfied</small>
+                </div>
+            </div>
+            <button id="submitBtn" class="btn btn-outline btn-accent mx-auto  text-lg bg-transparent">Submit</button>
+
         </div>
-        <div class="rating w-3/12  flex flex-col items-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/1791/1791385.png">
-          <small>Neutral</small>
-        </div>
-        <div class="rating w-3/12  flex flex-col items-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/166/166538.png">
-          <small>Satisfied</small>
-        </div>
-      </div>
-    <button class="btn glass text-lg bg-transparent">Submit</button>
-  </div>
-</div>
+    </div>
 </body>
+
 </html>
